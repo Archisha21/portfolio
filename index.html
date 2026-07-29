@@ -336,6 +336,58 @@
     }
 
 
+    /* ─── EXPERIENCE (CERTIFICATIONS & INTERNSHIPS) ─── */
+    #experience { background: var(--gray-100); }
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .experience-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.75rem;
+      border: 1px solid var(--gray-200);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .experience-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,58,92,0.1); }
+    .experience-top {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 0.25rem;
+    }
+    .experience-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--blue-pale);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .experience-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--blue-deep);
+    }
+    .experience-org {
+      font-size: 0.9rem;
+      color: var(--gray-500);
+    }
+    .experience-date {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--blue-mid);
+      letter-spacing: 0.05em;
+    }
+    .experience-desc {
+      font-size: 0.88rem;
+      color: var(--gray-700);
+      line-height: 1.6;
+    }
+
     #skills { background: var(--blue-faint); }
     .skills-grid {
       display: grid;
@@ -525,6 +577,7 @@
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Certifications & Internships</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -605,6 +658,38 @@
     </div>
   </section>
 
+  <section id="experience">
+    <div class="container">
+      <div class="section-label">Beyond the Classroom</div>
+      <h2 class="section-title">Certifications & Internships</h2>
+      <div class="section-divider"></div>
+      <div class="experience-grid">
+        <div class="experience-card">
+          <div class="experience-top">
+            <div class="experience-icon">🔬</div>
+            <div>
+              <div class="experience-title">Summer Research Internship</div>
+              <div class="experience-org">IIT Roorkee, under Prof. Sugata Gangopadhyay</div>
+            </div>
+          </div>
+          <div class="experience-date">May 2026 – July 2026</div>
+          <div class="experience-desc">Researched Augmented Optimization Learning — the integration of machine learning and large language models with classical optimization frameworks — exploring approaches to enhance traditional optimization techniques with learned components.</div>
+        </div>
+        <div class="experience-card">
+          <div class="experience-top">
+            <div class="experience-icon">🖥️</div>
+            <div>
+              <div class="experience-title">Foundations of Quantum Technologies</div>
+              <div class="experience-org">IBM Career Education Program</div>
+            </div>
+          </div>
+          <div class="experience-date">2026</div>
+          <div class="experience-desc">Certification covering the fundamentals of quantum computing, including quantum gates, circuits, and algorithms.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="skills">
     <div class="container">
       <div class="section-label">What I Know</div>
@@ -630,6 +715,7 @@
             <span class="skill-tag">Python</span>
             <span class="skill-tag">Django</span>
             <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MySQL</span>
             <span class="skill-tag">REST APIs</span>
           </div>
         </div>
@@ -834,7 +920,7 @@
         }
       });
     }, { threshold: 0.1 });
-    document.querySelectorAll('.timeline-item, .skill-category, .project-card, .stat-card').forEach(el => {
+    document.querySelectorAll('.timeline-item, .skill-category, .project-card, .stat-card, .experience-card').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
